@@ -29,6 +29,14 @@ def verify_content(texts)
   }
 end
 
-def random_string(len)
+def random_string(length)
   (0...length).map { (65 + rand(26)).chr }.join
+end
+
+def login(user, password)
+  visit ROOT_URL + '/main'
+  click_on 'Login'
+  fill_in 'id_username', with: user
+  fill_in 'id_password', with: password
+  click_on 'OK'
 end

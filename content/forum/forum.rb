@@ -11,5 +11,4 @@ $forum_content = [
   'Machine Learning',
   'Trò chuyện linh tinh',
   'Quảng cáo',
-  ':@)'
 ]
