@@ -20,7 +20,7 @@ feature "Forum" do
     content = random_string(50)
 
     fill_in 'id_title', with: title
-    fill_in 'id_content', with: content
+    fill_in_ckeditor 'id_content', with: content
     click_on 'OK'
 
     expect(page).to have_content(title)

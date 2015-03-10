@@ -3,6 +3,7 @@ require 'capybara/dsl'
 require 'capybara/rspec'
 require 'capybara-screenshot'
 require 'capybara-screenshot/rspec'
+require 'pry'
 
 RSpec.configure do |config|
   config.include Capybara::DSL, type: :feature
@@ -39,4 +40,12 @@ def login(user, password)
   fill_in 'id_username', with: user
   fill_in 'id_password', with: password
   click_on 'OK'
+end
+
+def fill_in_ckeditor(locator, opts)
+  content = opts.fetch(:with).to_json
+  page.execute_script <<-SCRIPT
+    CKEDITOR.instances['#{locator}'].setData(#{content});
+    $('textarea##{locator}').text(#{content});
+  SCRIPT
 end
