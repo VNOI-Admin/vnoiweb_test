@@ -26,8 +26,8 @@ feature "Forum" do
     expect(page).to have_content(title)
     expect(page).to have_content(content)
 
-    expect(page).to have_content('Edit this post')
-    expect(page).to have_content('Comment this post')
+    expect(page).to have_content('Edit')
+    expect(page).to have_content('Reply')
   end
 end
 

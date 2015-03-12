@@ -39,7 +39,7 @@ def login(user, password)
   click_on 'Login'
   fill_in 'id_username', with: user
   fill_in 'id_password', with: password
-  click_on 'OK'
+  click_on 'Login'
 end
 
 def fill_in_ckeditor(locator, opts)
